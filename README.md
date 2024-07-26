@@ -11,12 +11,16 @@
 Here is a basic example in Python using the _requests_ library:
 
 import requests
+
 #Example endpoint, headers, and payload
+
 url = "https://api.fidelity.com/v1/trading/orders"
+
 headers = {
         "Authorization": "Bearer YOUR_ACCESS_TOKEN",
         "Content-Type": "application/json"
         }
+
 payload = {
         "symbol": "AAPL",
         "quantity": 10,
@@ -25,10 +29,15 @@ payload = {
         "price": 150.00, 
         "duration": "DAY"
         }
+
 response = requests.post(url, headers = hearders, json = payload)
+
 if response.status_code == 200:
+
   print("Order placed successfully")
+
 else:
+
   print(f"Failed to place order: {response.json()}")
 
 This is just as simplified example. Need to adapt it based on the actual API specifications adn include proper error handling, logging, and perhaps more sophisticated logic for the strategies.
