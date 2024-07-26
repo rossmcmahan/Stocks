@@ -79,7 +79,7 @@ Starting a project to automate stock buys and sells involves several steps. Here
 ## Example Steps in Code:
 Step 1: Setting Up
 
-#install necessary packages
+#install necessary packages#
 pip install requests pandas
 
 
