@@ -79,12 +79,25 @@ Starting a project to automate stock buys and sells involves several steps. Here
 ## Example Steps in Code:
 Step 1: Setting Up
 
-#install necessary packages#
+#install necessary packages
+
 pip install requests pandas
 
 
 Step 2: Authentication Example
+
 import requests
+
+def authenticate():
+    url = "https://api.fidelity.com/v1/authentication"
+    payload = {
+          'client_id': 'YOUR_CLIENT_ID',
+          'client_secret': 'YOUR_CLIENT_SECRET',
+          'grant_type': 'password',
+          'username': 'YOUR_USERNAME',
+          'password': 'YOUR_PASSWORD'
+          }
+    
 
 
 
