@@ -1,6 +1,6 @@
 # Stocks
 
-##Steps to get started:
+## Steps to get started:
   1. Sign up for Trading Platform's API (Shwab): You need to register for access to their API. This will provide the necessary keys and tokens to interact with their systems programmatically.
   2. Choose a Programming Language (Python): Python is a popular choice for stock trading due to its extensive libraies and ease of use. Other languages like JavaScript, Java, or C# can also be used.
   3. Install Necessary Libraries: Fpr Python, you might use libraries like _requests_ for HTTO requests, _pandas_ for data manipulation, and _numpy_ for numerical operations.
