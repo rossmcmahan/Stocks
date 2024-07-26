@@ -89,16 +89,111 @@ Step 2: Authentication Example
 import requests
 
 def authenticate():
+    
     url = "https://api.fidelity.com/v1/authentication"
+    
     payload = {
+    
           'client_id': 'YOUR_CLIENT_ID',
+          
           'client_secret': 'YOUR_CLIENT_SECRET',
+          
           'grant_type': 'password',
+          
           'username': 'YOUR_USERNAME',
+          
           'password': 'YOUR_PASSWORD'
+          
           }
     
+    response = requests.post(url, data = payload)
 
+    if response.status_code == 200:
+
+        return response.json()['access_token']
+
+    else:
+
+        raise Exception("Authentication failed")
+
+  token = authenticate()
+
+
+Step 3: Getting Stock Data
+
+def get_stock_price(symbol, token):
+
+    url = f"https://api.fidelity.com/v1/market/quotes/{symbol}"
+
+    headers = {"Authorization": f"Bearer {token}"}
+
+    respones = requests.get(url, headers = headers)
+
+    if response.status_code == 200:
+
+        return response.json()
+
+    else:
+
+        raise Exception("Failed to get stock price")
+
+price_data = get_stock_price("AAPL", token)
+
+print(price_data)
+
+
+Step 4: Placing an Order
+
+def place_order(symbol, quantity, action, token):
+
+    url = "https://api.fidelity.com/v1/trading/orders
+
+    headers = {
+
+              "Authorization": f"Bearer {token}",
+
+              "Content-Type": "application/json"
+
+              }
+
+    payload = {
+
+              "symbol": symbol, 
+
+              "quantity": quantity,
+
+              "action": action,
+
+              "orderType": "MARKET",
+
+              "duration": "DAY"
+
+              }
+
+    response = requests.post(url, header = headers, json = payload)
+
+    if response.status_code == 200:
+    
+        return response.json()
+
+    else:
+
+        raise Exception("Order placement failed")
+
+order_response = place_order("AAPL", 10, "BUY', token)
+
+print(order_response)
+
+
+10. Continuous Improvement
+
+        - Monitor Performance: Regularly review the performance of your bot and tweak your strategy a needed.
+        - Stay Updated: Keep up with the changes in the market and update your bot to handle new scenarios.
+
+By following these steps, you'll be able to develop a basic automated trading system on any trading platform.
+      
+
+        
 
 
 
